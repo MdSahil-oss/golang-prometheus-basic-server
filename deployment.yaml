@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-basic-server
+  labels:
+    app: basic-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic-server
+  template:
+    metadata:
+      labels:
+        app: basic-server
+    spec:
+      containers:
+      - name: basic-server
+        image: mdsahiloss/golang-prometheus-basic-server:latest
+        ports:
+        - containerPort: 8090
