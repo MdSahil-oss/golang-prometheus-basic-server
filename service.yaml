@@ -5,10 +5,10 @@ metadata:
   labels:
     app: basic-server
 spec:
-  type: NodePort
   selector:
     app: basic-server
   ports:
     - protocol: TCP
+      name: golang-server-port
       port: 8090
       targetPort: 8090

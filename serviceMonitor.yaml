@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: golang-basic-server
+  labels:
+    release: prom-operator
+spec:
+  selector:
+    matchLabels:
+      app: basic-server
+  endpoints:
+    - port: golang-server-port
